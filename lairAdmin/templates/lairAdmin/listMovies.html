@@ -20,6 +20,7 @@
                 <th>Duracion</th>
                 <th>Modalidad</th>
                 <th>Funcion</th>
+                <th>Poster</th>
             </tr>
          {% for movie in movies %}
             <tr>
@@ -31,6 +32,7 @@
                 <td>{{movie.duration}}</td>
                 <td>{{movie.mode}}</td>
                 <td>{{movie.showing}}</td>
+                <td><img src="{{movie.thumb.url}}" alt=""></td>
             </tr>
         {% endfor %} 
         </table>

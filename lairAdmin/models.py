@@ -8,7 +8,7 @@ class Movie(models.Model):
     director = models.CharField(max_length=200)
     genre   = models.CharField(max_length=200)
     language   = models.CharField(max_length=200)
-    #thumb   = models.ImageField(upload_to = os.path.join(BASE_DIR))
+    thumb   = models.ImageField(default='defaultCover.png')
     mode = models.IntegerField(default = 0)
     showing = models.BooleanField(default = False)
     #anadir los archivos estaticos para la thumb
