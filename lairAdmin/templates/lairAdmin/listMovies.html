@@ -1,0 +1,43 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<br>
+<div class=" row top'buffer" >
+
+    <div class="col-md-6">
+        <h1>Todas las peliculas</h1>
+    </div>
+
+    <div class="col-md-10">
+        <table class="table">
+
+            <tr>
+                <th>Titulo</th>
+                <th>Reparto</th>
+                <th>Director</th>
+                <th>Genero</th>
+                <th>Idioma</th>
+                <th>Duracion</th>
+                <th>Modalidad</th>
+                <th>Funcion</th>
+            </tr>
+         {% for movie in movies %}
+            <tr>
+                <td>{{movie.title}}</td>
+                <td>{{movie.cast}}</td>
+                <td>{{movie.director}}</td>
+                <td>{{movie.genre}}</td>
+                <td>{{movie.language}}</td>
+                <td>{{movie.duration}}</td>
+                <td>{{movie.mode}}</td>
+                <td>{{movie.showing}}</td>
+            </tr>
+        {% endfor %} 
+        </table>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

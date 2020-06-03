@@ -16,4 +16,9 @@ def add_movies(request):
         else: form = forms.AddMovie()
         return render(request, 'lairAdmin/addMovies.html', {'form': form})
 
+def list_movies(request):
+
+    movies = Movie.objects.all()
+    return render(request, 'lairAdmin/listMovies.html', {'movies':movies})
+
 # Create your views here.
