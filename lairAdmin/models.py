@@ -11,3 +11,4 @@ class Movie(models.Model):
     #thumb   = models.ImageField(upload_to = os.path.join(BASE_DIR))
     mode = models.IntegerField(default = 0)
     showing = models.BooleanField(default = False)
+    #anadir los archivos estaticos para la thumb
