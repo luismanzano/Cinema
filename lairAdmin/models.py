@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Movie(models.Model):
     title   = models.CharField(max_length=200)
-    duration = models.DurationField()
+    duration = models.IntegerField()
     cast  = models.TextField()
     director = models.CharField(max_length=200)
     genre   = models.CharField(max_length=200)

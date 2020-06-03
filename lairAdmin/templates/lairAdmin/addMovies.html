@@ -8,6 +8,14 @@
         <h1>Añadir Peliculas</h1>
     </div>
 
+    <div class="col-md-10">
+        <form action="{% url 'lairAdmin:addMovies' %}" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button class="btn btn-success" type="submit">Guardar Pelicula</button>
+        </form>
+    </div>
+
 </div>
 
 
