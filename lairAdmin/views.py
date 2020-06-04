@@ -26,4 +26,8 @@ def delete_movies(request, id):
     movie.delete()
     return redirect('lairAdmin:listMovies')
 
+def edit_movies(request, id):
+    movie = Movie.objects.get(id = id)
+    return render(request, 'lairAdmin/listMovies.html', {'movie':movie})
+
 # Create your views here.

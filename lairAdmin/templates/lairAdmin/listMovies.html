@@ -34,6 +34,7 @@
                 <td>{{movie.showing}}</td>
                 <td><img src="{{movie.thumb.url}}" alt=""  height="100px"></td>
                 <td><form action="{% url 'lairAdmin:deleteMovies' id=movie.id %}" method="POST">{% csrf_token %}<button class="btn btn-danger" type="submit">Eliminar</button></form></td>
+                <td><form action="{% url 'lairAdmin:editMovies' id=movie.id %}" method="POST">{% csrf_token %}<button class="btn btn-danger" type="submit">Editar</button></form></td>
             </tr>
         {% endfor %} 
         </table>
