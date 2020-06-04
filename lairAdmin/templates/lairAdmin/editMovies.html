@@ -1,0 +1,32 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<br>
+<div class=" row top'buffer" >
+
+    <div class="col-md-6">
+        <h1>Actualizar Peliculas</h1>
+    </div>
+
+<div class="col-md-10">
+    <h3>Datos Actuales</h3>
+    <p>Titulo: {{movie.title}}</p>
+    <p>Reparto: {{movie.cast}}</p>
+    <p>Director: {{movie.director}}</p>
+    <p>Genero: {{movie.genre}}</p>
+    <p>Lenguaje: {{movie.language}}</p>
+    <p>Modo: {{movie.mode}}</p>
+    <p>En Cartlera: {{movie.showing}}</p>
+    <p>Thumb: <img src="{{movie.thumb.url}}" height="100px" alt=""></p>
+    <form action="{% url 'lairAdmin:editMovies' id=movie.id %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-success" type="submit">Actualizar Pelicula</button>
+    </form>
+</div>
+
+</div>
+
+
+
+{% endblock %}

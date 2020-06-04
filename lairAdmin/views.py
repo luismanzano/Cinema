@@ -28,6 +28,22 @@ def delete_movies(request, id):
 
 def edit_movies(request, id):
     movie = Movie.objects.get(id = id)
-    return render(request, 'lairAdmin/listMovies.html', {'movie':movie})
+    form = forms.AddMovie(instance=movie)
+    
+    if request.method=='POST':
+        form = forms.AddMovie(request.POST, instance=movie)
+        if form.is_valid():
+            form.save()
+            return redirect('lairAdmin:listMovies')
+
+    return render(request, 'lairAdmin/editMovies.html', {'form':form, 'movie':movie})
+
+#def update_movies(request, id):
+    # movie = Movie.objects.get(id=id) 
+    # form = forms.AddMovie(request.POST, instance = movie)  
+    # if form.is_valid():  
+    #     form.save()  
+    #     return redirect('lairAdmin:listMovies')
+    # else: return redirect('lairAdmin:addMovies')
 
 # Create your views here.
